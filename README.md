@@ -3,7 +3,7 @@ Proof-of-concept (hereafter abbreviated POC) timer to help the ill remember to t
 
 ## Table of Contents
   * [Goals](#goals)
-  * [Compiling and Uploading](compiling-and-uploading)
+  * [Compiling and Uploading](#compiling-and-uploading)
   * [Using the Timer](#using-the-timer)
   * [Attaching Peripherals](#attaching-peripherals)
        * [Breadboarding](#breadboarding)
