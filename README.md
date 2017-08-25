@@ -2,14 +2,14 @@
 Proof-of-concept (hereafter abbreviated POC) timer to help the ill remember to take their medicine
 
 ## Table of Contents
-   * [Goals](#goals)
-   * [Compiling and Uploading](compiling-and-uploading)
-   * [Using the Timer](#using-the-timer)
-   * [Attaching Peripherals](#attaching-peripherals)
-         * [Breadboarding](#breadboarding)
-         * [Switch](#switch)
-         * [Buzzer](#buzzer)
-   * [Customization](#customization)
+  * [Goals](#goals)
+  * [Compiling and Uploading](compiling-and-uploading)
+  * [Using the Timer](#using-the-timer)
+  * [Attaching Peripherals](#attaching-peripherals)
+       * [Breadboarding](#breadboarding)
+       * [Buzzer](#buzzer)
+       * [Switch](#switch)
+  * [Customization](#customization)
 
 This repository has been tested on an Arduino Micro.
 
