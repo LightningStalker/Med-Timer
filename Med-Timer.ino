@@ -98,8 +98,8 @@ void loop() {
   hours(4);
   error = alert(); // 4-hour Medicine
   minutes(60 - error);
-  error += alert(); // 5-hour Medicine
-  minutes(180);
+  error = alert(); // 5-hour Medicine
+  minutes(180 - error);
   error += alert(); // 4-hour Medicine
   minutes(240);
   alert(); // 4-hour Medicine
