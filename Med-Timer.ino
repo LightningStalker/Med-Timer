@@ -39,7 +39,7 @@ unsigned long alert() { // slightly modified Blink Without Delay code
   unsigned long runTime = 0;         // time in seconds since alert began
   int alertState = LOW;
 
-  while(true) {
+  while (true) {
     if (digitalRead(buttonPin) == LOW) {
       digitalWrite(ledPin, LOW);
       digitalWrite(buzzPin, LOW);
@@ -69,7 +69,7 @@ unsigned long alert() { // slightly modified Blink Without Delay code
 }
 
 void beep( bool pause = true ) { // short confirmation beep/flash, pause by default
-  if(pause) seconds(1);          // optional delay in case of switch bounce
+  if (pause) seconds(1);         // optional delay in case of switch bounce
   digitalWrite(ledPin, HIGH);
   digitalWrite(buzzPin, HIGH);
   delay(100);
@@ -80,17 +80,17 @@ void beep( bool pause = true ) { // short confirmation beep/flash, pause by defa
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-  #ifdef DEBUG
+#ifdef DEBUG
   Serial.begin(9600);
-  while(!Serial) {
+  while (!Serial) {
     // waiting and waiting and waiting
   }
-  #endif
+#endif
   // initialize the LED pin as an output.
   pinMode(ledPin, OUTPUT);
   // initialize the buzzer pin as an output.
   pinMode(buzzPin, OUTPUT);
-  // initialize the pushbutton pin as an weak pullups:
+  // initialize the pushbutton pin as an input with weak pullups:
   pinMode(buttonPin, INPUT_PULLUP);
 }
 
@@ -103,26 +103,26 @@ void loop() {
   // morning dose, begin timing
   hours(4);
   error = alert();              // 4-hour Medicine
-  if(error > 60) error = 60;
+  if (error > 60) error = 60;
   beep();                       // beep confirming start of next timing cycle
 
   minutes(60 - error);
   error = alert();              // 5-hour Medicine
-  if(error > 180) error = 180;
+  if (error > 180) error = 180;
   beep();
 
   minutes(180 - error);
   alert();                      // 4-hour Medicine
   beep();
 
-  minutes(240);
+  hours(4);
   alert();                      // 4-hour Medicine
 
   // time to go to sleep
   noInterrupts();
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);
   sleep_enable();
-  while(true) { // enter infinite loop
+  while (true) { // enter infinite loop
     sleep_mode();
   }
 }
